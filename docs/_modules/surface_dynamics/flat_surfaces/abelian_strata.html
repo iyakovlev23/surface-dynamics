@@ -1,78 +1,296 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>surface_dynamics.flat_surfaces.abelian_strata &mdash; surface-dynamics 0.4.7 documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" /> 
-</head>
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="../../../index.html" class="icon icon-home"> surface-dynamics
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../demo_interval_exchanges.html">Interval exchange transformations</a></li>
+    <!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
+        <title>surface_dynamics.flat_surfaces.abelian_strata - surface-dynamics 0.5.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=387cc868" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="https://doc.sagemath.org/html/en/reference/_static/custom-furo.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --color-brand-primary: #0f0fff;
+  --color-brand-content: #0f0fff;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" /
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">surface-dynamics 0.5.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../../_static/logo.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../../_static/logo.svg" alt="Dark Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">surface-dynamics 0.5.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/interval_exchanges.html">Interval exchange transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/square_tiled_surfaces.html">Square-tiled surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/rank2_genus3_classification.html">Filtering Possible <span class="math notranslate nohighlight">\(\mathcal M\)</span>-Parallel Classes</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../strata.html">Strata of Abelian and quadratic differentials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../surface_topology.html">Surface topology and geometry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../origamis.html">Origamis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../interval_exchanges/index.html">Interval exchange transformations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../interval_exchanges/index.html">Interval exchange transformations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Interval exchange transformations</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../interval_exchanges/constructors.html">Interval exchange constructors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../interval_exchanges/template.html">Permutation template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../interval_exchanges/labelled.html">Labelled permutations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../interval_exchanges/reduced.html">Reduced permutations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../interval_exchanges/rauzy_class_cardinality.html">Rauzy class cardinality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../interval_exchanges/cover.html">Covering construction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../interval_exchanges/iet.html">Interval exchange transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../interval_exchanges/integer_iet.html">Integral interval exchanges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../interval_exchanges/iet_family.html">Interval exchange families</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../interval_exchanges/flip_sequence.html">Flip sequences</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../database.html">Database of cylinder diagrams and quadratic permutations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../topological_recursion/index.html">Topological recursion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">Miscellaneous</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../topological_recursion/index.html">Topological recursion</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Topological recursion</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../topological_recursion/topological_recursion.html">Generic topological recursion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../topological_recursion/kontsevich.html">Kontsevich topological recursion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../topological_recursion/masur_veech.html">Masur-Veech topological recursion</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../misc/index.html">Miscellaneous</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Miscellaneous</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../misc/constellation.html">Constellations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../misc/group_representation.html">Finite group representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../misc/plane_tree.html">Plane trees</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
 </ul>
 
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">surface-dynamics</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../index.html">Module code</a> &raquo;</li>
-      <li>surface_dynamics.flat_surfaces.abelian_strata</li>
-      <li class="wy-breadcrumbs-aside">
-      </li>
-  </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <h1>Source code for surface_dynamics.flat_surfaces.abelian_strata</h1><div class="highlight"><pre>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <h1>Source code for surface_dynamics.flat_surfaces.abelian_strata</h1><div class="highlight"><pre>
 <span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Strata of differentials on Riemann surfaces</span>
 
@@ -246,7 +464,7 @@
 <span class="kn">from</span> <span class="nn">surface_dynamics.flat_surfaces.strata</span> <span class="kn">import</span> <span class="n">Stratum</span><span class="p">,</span> <span class="n">StratumComponent</span><span class="p">,</span> <span class="n">Strata</span>
 
 <span class="k">def</span> <span class="nf">_cylinder_diagrams_with_symmetric</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Iterate through all possible reflections of the cylinder diagrams in ``iterator``.</span>
 
 <span class="sd">    TESTS::</span>
@@ -289,8 +507,10 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span>
 
-<div class="viewcode-block" id="AbelianStratum"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum">[docs]</a><span class="k">class</span> <span class="nc">AbelianStratum</span><span class="p">(</span><span class="n">Stratum</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="AbelianStratum">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum">[docs]</a>
+<span class="k">class</span> <span class="nc">AbelianStratum</span><span class="p">(</span><span class="n">Stratum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Stratum of Abelian differentials.</span>
 
 <span class="sd">    A stratum with a marked outgoing separatrix corresponds to Rauzy diagram</span>
@@ -371,7 +591,7 @@
         <span class="k">return</span> <span class="n">UniqueRepresentation</span><span class="o">.</span><span class="n">__classcall__</span><span class="p">(</span><span class="n">AbelianStratum</span><span class="p">,</span> <span class="n">zeros</span><span class="p">,</span> <span class="n">nb_fake_zeros</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zeros</span><span class="p">,</span> <span class="n">nb_fake_zeros</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        TESTS::</span>
 
 <span class="sd">            sage: from surface_dynamics import *</span>
@@ -423,8 +643,10 @@
             <span class="c1"># connected</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_cc</span> <span class="o">=</span> <span class="p">(</span><span class="n">ASC</span><span class="p">,</span> <span class="p">)</span>
 
-<div class="viewcode-block" id="AbelianStratum.zeros"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.zeros">[docs]</a>    <span class="k">def</span> <span class="nf">zeros</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fake_zeros</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="AbelianStratum.zeros">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.zeros">[docs]</a>
+    <span class="k">def</span> <span class="nf">zeros</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fake_zeros</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the multiplicities of the zeros.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -440,8 +662,11 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_zeros</span> <span class="o">+</span> <span class="p">(</span><span class="mi">0</span><span class="p">,)</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_nb_fake_zeros</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_zeros</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.nb_zeros"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.nb_zeros">[docs]</a>    <span class="k">def</span> <span class="nf">nb_zeros</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fake_zeros</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.nb_zeros">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.nb_zeros">[docs]</a>
+    <span class="k">def</span> <span class="nf">nb_zeros</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fake_zeros</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the number of zeros of self.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -457,8 +682,11 @@
             <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_zeros</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nb_fake_zeros</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_zeros</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.nb_fake_zeros"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.nb_fake_zeros">[docs]</a>    <span class="k">def</span> <span class="nf">nb_fake_zeros</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.nb_fake_zeros">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.nb_fake_zeros">[docs]</a>
+    <span class="k">def</span> <span class="nf">nb_fake_zeros</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of fake zeros.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -472,11 +700,14 @@
 
 <span class="sd">            sage: QuadraticStratum(0,4,2,2).nb_fake_zeros()</span>
 <span class="sd">            1</span>
-<span class="sd">         &quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nb_fake_zeros</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.genus"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.genus">[docs]</a>    <span class="k">def</span> <span class="nf">genus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.genus">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.genus">[docs]</a>
+    <span class="k">def</span> <span class="nf">genus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the genus of the stratum.</span>
 
 <span class="sd">        OUTPUT:</span>
@@ -496,8 +727,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">Integer</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_zeros</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.dimension"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.dimension">[docs]</a>    <span class="k">def</span> <span class="nf">dimension</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.dimension">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.dimension">[docs]</a>
+    <span class="k">def</span> <span class="nf">dimension</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the complex dimension of this stratum.</span>
 
 <span class="sd">        The dimension is `2g-2+s+1` where `g` is the genus of surfaces in the</span>
@@ -527,8 +761,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">genus</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">nb_zeros</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.rank"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.rank">[docs]</a>    <span class="k">def</span> <span class="nf">rank</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.rank">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.rank">[docs]</a>
+    <span class="k">def</span> <span class="nf">rank</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the rank of this manifold (half dimension of the absolute part of the tangent space).</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -544,12 +781,15 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">genus</span><span class="p">()</span></div>
 
+
     <span class="c1">#</span>
     <span class="c1"># Connected component</span>
     <span class="c1">#</span>
 
-<div class="viewcode-block" id="AbelianStratum.has_odd_component"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.has_odd_component">[docs]</a>    <span class="k">def</span> <span class="nf">has_odd_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="AbelianStratum.has_odd_component">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.has_odd_component">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_odd_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Test whether this stratum has an odd spin component.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -565,8 +805,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">z</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zeros</span><span class="p">())</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">genus</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">2</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.has_even_component"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.has_even_component">[docs]</a>    <span class="k">def</span> <span class="nf">has_even_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.has_even_component">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.has_even_component">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_even_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Test whether this stratum has an even spin component.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -582,8 +825,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">z</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zeros</span><span class="p">())</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">genus</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">4</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.has_hyperelliptic_component"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.has_hyperelliptic_component">[docs]</a>    <span class="k">def</span> <span class="nf">has_hyperelliptic_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.has_hyperelliptic_component">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.has_hyperelliptic_component">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_hyperelliptic_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Test whether this stratum has an hyperelliptic component.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -600,8 +846,11 @@
         <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">zeros</span><span class="p">()</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.has_non_hyperelliptic_component"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.has_non_hyperelliptic_component">[docs]</a>    <span class="k">def</span> <span class="nf">has_non_hyperelliptic_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.has_non_hyperelliptic_component">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.has_non_hyperelliptic_component">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_non_hyperelliptic_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Test whether this stratum has a non-hyperelliptic component.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -618,8 +867,11 @@
         <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">zeros</span><span class="p">()</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.odd_component"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.odd_component">[docs]</a>    <span class="k">def</span> <span class="nf">odd_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.odd_component">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.odd_component">[docs]</a>
+    <span class="k">def</span> <span class="nf">odd_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the odd component of self (if any).</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -634,8 +886,11 @@
         <span class="k">if</span> <span class="n">OddASC</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cc</span><span class="p">:</span> <span class="k">return</span> <span class="n">OddASC</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No odd spin component in this stratum&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.even_component"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.even_component">[docs]</a>    <span class="k">def</span> <span class="nf">even_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.even_component">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.even_component">[docs]</a>
+    <span class="k">def</span> <span class="nf">even_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the even component of self (if any)</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -650,8 +905,11 @@
         <span class="k">if</span> <span class="n">EvenASC</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cc</span><span class="p">:</span> <span class="k">return</span> <span class="n">EvenASC</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No even spin component in this stratum&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.hyperelliptic_component"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.hyperelliptic_component">[docs]</a>    <span class="k">def</span> <span class="nf">hyperelliptic_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.hyperelliptic_component">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.hyperelliptic_component">[docs]</a>
+    <span class="k">def</span> <span class="nf">hyperelliptic_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the hyperelliptic component of self (if any)</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -666,8 +924,11 @@
         <span class="k">if</span> <span class="n">HypASC</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cc</span><span class="p">:</span> <span class="k">return</span> <span class="n">HypASC</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No hyperelliptic component in this stratum&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.non_hyperelliptic_component"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.non_hyperelliptic_component">[docs]</a>    <span class="k">def</span> <span class="nf">non_hyperelliptic_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.non_hyperelliptic_component">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.non_hyperelliptic_component">[docs]</a>
+    <span class="k">def</span> <span class="nf">non_hyperelliptic_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the non hyperelliptic component of self (if any)</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -687,8 +948,10 @@
     <span class="c1"># Quadratic cover</span>
     <span class="c1">#</span>
 
-<div class="viewcode-block" id="AbelianStratum.orientation_quotients"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.orientation_quotients">[docs]</a>    <span class="k">def</span> <span class="nf">orientation_quotients</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">fake_zeros</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="AbelianStratum.orientation_quotients">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.orientation_quotients">[docs]</a>
+    <span class="k">def</span> <span class="nf">orientation_quotients</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fake_zeros</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the list of quadratic strata such that their orientation cover</span>
 <span class="sd">        are contained in this stratum.</span>
 
@@ -766,12 +1029,15 @@
 
         <span class="k">return</span> <span class="n">res</span></div>
 
+
     <span class="c1">#</span>
     <span class="c1"># Separatrix and cylinder diagrams</span>
     <span class="c1">#</span>
 
-<div class="viewcode-block" id="AbelianStratum.separatrix_diagram_iterator"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.separatrix_diagram_iterator">[docs]</a>    <span class="k">def</span> <span class="nf">separatrix_diagram_iterator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="AbelianStratum.separatrix_diagram_iterator">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.separatrix_diagram_iterator">[docs]</a>
+    <span class="k">def</span> <span class="nf">separatrix_diagram_iterator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return an iterator over the separatrix diagrams of this stratum.</span>
 
 <span class="sd">        For strata of small dimension, it could be faster to use the method</span>
@@ -784,8 +1050,11 @@
         <span class="kn">from</span> <span class="nn">.separatrix_diagram</span> <span class="kn">import</span> <span class="n">separatrix_diagram_iterator</span>
         <span class="k">return</span> <span class="n">separatrix_diagram_iterator</span><span class="p">([</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zeros</span><span class="p">()],</span><span class="n">ncyls</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.separatrix_diagrams"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.separatrix_diagrams">[docs]</a>    <span class="k">def</span> <span class="nf">separatrix_diagrams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.separatrix_diagrams">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.separatrix_diagrams">[docs]</a>
+    <span class="k">def</span> <span class="nf">separatrix_diagrams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the list of separatrix diagrams that appears in this stratum.</span>
 
 <span class="sd">        INPUT:</span>
@@ -815,8 +1084,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">separatrix_diagram_iterator</span><span class="p">(</span><span class="n">ncyls</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.cylinder_diagram_iterator"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.cylinder_diagram_iterator">[docs]</a>    <span class="k">def</span> <span class="nf">cylinder_diagram_iterator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_computation</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.cylinder_diagram_iterator">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.cylinder_diagram_iterator">[docs]</a>
+    <span class="k">def</span> <span class="nf">cylinder_diagram_iterator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_computation</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Iterator over all cylinder diagram of this stratum.</span>
 
 <span class="sd">        The generation is up to isomorphism and horizontal/vertical symmetry</span>
@@ -868,18 +1140,19 @@
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">force_computation</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">cc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">components</span><span class="p">():</span>
-                <span class="k">for</span> <span class="n">cd</span> <span class="ow">in</span> <span class="n">cc</span><span class="o">.</span><span class="n">cylinder_diagram_iterator</span><span class="p">(</span><span class="n">ncyls</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-                    <span class="k">yield</span> <span class="n">cd</span>
+                <span class="k">yield from</span> <span class="n">cc</span><span class="o">.</span><span class="n">cylinder_diagram_iterator</span><span class="p">(</span><span class="n">ncyls</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">sd</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">separatrix_diagram_iterator</span><span class="p">(</span><span class="n">ncyls</span><span class="p">):</span>
                 <span class="n">iterator</span> <span class="o">=</span> <span class="n">sd</span><span class="o">.</span><span class="n">cylinder_diagram_iterator</span><span class="p">(</span><span class="n">up_to_symmetry</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">up_to_symmetry</span><span class="p">:</span>
                     <span class="n">iterator</span> <span class="o">=</span> <span class="n">_cylinder_diagrams_with_symmetric</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">cd</span> <span class="ow">in</span> <span class="n">iterator</span><span class="p">:</span>
-                    <span class="k">yield</span> <span class="n">cd</span></div>
+                <span class="k">yield from</span> <span class="n">iterator</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.cylinder_diagrams"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.cylinder_diagrams">[docs]</a>    <span class="k">def</span> <span class="nf">cylinder_diagrams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_computation</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.cylinder_diagrams">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.cylinder_diagrams">[docs]</a>
+    <span class="k">def</span> <span class="nf">cylinder_diagrams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_computation</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list of cylinder diagram of this stratum.</span>
 
 <span class="sd">        INPUT::</span>
@@ -941,8 +1214,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cylinder_diagram_iterator</span><span class="p">(</span><span class="n">ncyls</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="p">,</span> <span class="n">force_computation</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.cylinder_diagrams_by_component"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.cylinder_diagrams_by_component">[docs]</a>    <span class="k">def</span> <span class="nf">cylinder_diagrams_by_component</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_computation</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.cylinder_diagrams_by_component">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.cylinder_diagrams_by_component">[docs]</a>
+    <span class="k">def</span> <span class="nf">cylinder_diagrams_by_component</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_computation</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a dictionary component -&gt; list of cylinder diagrams.</span>
 
 <span class="sd">        INPUT:</span>
@@ -1004,8 +1280,11 @@
 
         <span class="k">return</span> <span class="n">d</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.one_cylinder_diagram"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.one_cylinder_diagram">[docs]</a>    <span class="k">def</span> <span class="nf">one_cylinder_diagram</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.one_cylinder_diagram">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.one_cylinder_diagram">[docs]</a>
+    <span class="k">def</span> <span class="nf">one_cylinder_diagram</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a diagram with one cylinder in this connected component.</span>
 
 <span class="sd">        The diagram returned is the one deduced from the method representative.</span>
@@ -1027,14 +1306,20 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">one_component</span><span class="p">()</span><span class="o">.</span><span class="n">one_cylinder_diagram</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.separatrix_diagrams_number"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.separatrix_diagrams_number">[docs]</a>    <span class="k">def</span> <span class="nf">separatrix_diagrams_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.separatrix_diagrams_number">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.separatrix_diagrams_number">[docs]</a>
+    <span class="k">def</span> <span class="nf">separatrix_diagrams_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of separatrix diagram that belongs to this stratum.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">separatrix_diagram_iterator</span><span class="p">(</span><span class="n">ncyls</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.cylinder_diagrams_number"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.cylinder_diagrams_number">[docs]</a>    <span class="k">def</span> <span class="nf">cylinder_diagrams_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_computation</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.cylinder_diagrams_number">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.cylinder_diagrams_number">[docs]</a>
+    <span class="k">def</span> <span class="nf">cylinder_diagrams_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_computation</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of cylinder diagram that belongs to this stratum.</span>
 
 <span class="sd">        INPUT:</span>
@@ -1100,8 +1385,11 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">4</span> <span class="o">//</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="n">cd</span><span class="o">.</span><span class="n">symmetries</span><span class="p">()))</span> <span class="k">for</span> <span class="n">cd</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cylinder_diagram_iterator</span><span class="p">(</span><span class="n">ncyls</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.single_cylinder_representative"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.single_cylinder_representative">[docs]</a>    <span class="k">def</span> <span class="nf">single_cylinder_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.single_cylinder_representative">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.single_cylinder_representative">[docs]</a>
+    <span class="k">def</span> <span class="nf">single_cylinder_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a single cylinder permutation representative.</span>
 
 <span class="sd">        Returns a permutation representative of a square-tiled surface in this</span>
@@ -1158,8 +1446,11 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">one_component</span><span class="p">()</span><span class="o">.</span><span class="n">single_cylinder_representative</span><span class="p">(</span><span class="n">alphabet</span><span class="p">,</span> <span class="n">reduced</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AbelianStratum.single_cylinder_origami"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.single_cylinder_origami">[docs]</a>    <span class="k">def</span> <span class="nf">single_cylinder_origami</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratum.single_cylinder_origami">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratum.single_cylinder_origami">[docs]</a>
+    <span class="k">def</span> <span class="nf">single_cylinder_origami</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns an origami associated to a single cylinder permutation representative.</span>
 
 <span class="sd">        Returns an origami in this connected component having a single vertical</span>
@@ -1184,10 +1475,14 @@
 <span class="sd">            sage: O.stratum() == AbelianStratum(2)</span>
 <span class="sd">            True</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">single_cylinder_representative</span><span class="p">(</span><span class="n">reduced</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_origami</span><span class="p">()</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">single_cylinder_representative</span><span class="p">(</span><span class="n">reduced</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_origami</span><span class="p">()</span></div>
+</div>
 
-<div class="viewcode-block" id="AbelianStratumComponent"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent">[docs]</a><span class="k">class</span> <span class="nc">AbelianStratumComponent</span><span class="p">(</span><span class="n">StratumComponent</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratumComponent">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent">[docs]</a>
+<span class="k">class</span> <span class="nc">AbelianStratumComponent</span><span class="p">(</span><span class="n">StratumComponent</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Connected component of Abelian stratum.</span>
 
 <span class="sd">    .. warning::</span>
@@ -1196,8 +1491,10 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span>
 
-<div class="viewcode-block" id="AbelianStratumComponent.spin"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.spin">[docs]</a>    <span class="k">def</span> <span class="nf">spin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="AbelianStratumComponent.spin">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.spin">[docs]</a>
+    <span class="k">def</span> <span class="nf">spin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return ``None`` since surfaces in this component have no spin.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -1211,8 +1508,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="AbelianStratumComponent.permutation_representative"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.permutation_representative">[docs]</a>    <span class="k">def</span> <span class="nf">permutation_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">relabel</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratumComponent.permutation_representative">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.permutation_representative">[docs]</a>
+    <span class="k">def</span> <span class="nf">permutation_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">relabel</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the Zorich representative of this connected component.</span>
 
 <span class="sd">        Zorich constructs explicitly interval exchange</span>
@@ -1334,8 +1634,11 @@
         <span class="n">p</span><span class="o">.</span><span class="n">alphabet</span><span class="p">(</span><span class="n">alphabet</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">p</span></div>
 
-<div class="viewcode-block" id="AbelianStratumComponent.lyapunov_exponents_approx"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.lyapunov_exponents_approx">[docs]</a>    <span class="k">def</span> <span class="nf">lyapunov_exponents_approx</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratumComponent.lyapunov_exponents_approx">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.lyapunov_exponents_approx">[docs]</a>
+    <span class="k">def</span> <span class="nf">lyapunov_exponents_approx</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the approximate Lyapunov exponents of the KZ-cocycle.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -1354,6 +1657,7 @@
         <span class="n">perm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">permutation_representative</span><span class="p">(</span><span class="n">reduced</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">perm</span><span class="o">.</span><span class="n">lyapunov_exponents_approx</span><span class="p">(</span><span class="o">**</span><span class="n">kargs</span><span class="p">)</span></div>
 
+
     <span class="c1"># TODO</span>
     <span class="c1"># def sum_of_lyapunov_exponents(self)</span>
     <span class="c1"># TODO</span>
@@ -1361,8 +1665,10 @@
     <span class="c1"># TODO</span>
     <span class="c1"># def carea(self)</span>
 
-<div class="viewcode-block" id="AbelianStratumComponent.random_standard_permutation"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.random_standard_permutation">[docs]</a>    <span class="k">def</span> <span class="nf">random_standard_permutation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nsteps</span><span class="o">=</span><span class="mi">64</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="AbelianStratumComponent.random_standard_permutation">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.random_standard_permutation">[docs]</a>
+    <span class="k">def</span> <span class="nf">random_standard_permutation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nsteps</span><span class="o">=</span><span class="mi">64</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Perform a random walk on rauzy diagram stopped on a standard permutation.</span>
 
 <span class="sd">        INPUT:</span>
@@ -1443,8 +1749,11 @@
 
         <span class="k">return</span> <span class="n">p</span></div>
 
-<div class="viewcode-block" id="AbelianStratumComponent.rauzy_diagram"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.rauzy_diagram">[docs]</a>    <span class="k">def</span> <span class="nf">rauzy_diagram</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratumComponent.rauzy_diagram">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.rauzy_diagram">[docs]</a>
+    <span class="k">def</span> <span class="nf">rauzy_diagram</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the extended Rauzy diagram associated to this connected component.</span>
 
 <span class="sd">        OUTPUT:</span>
@@ -1462,8 +1771,11 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">permutation_representative</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span><span class="o">.</span><span class="n">rauzy_diagram</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">permutation_representative</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwds</span><span class="p">)</span><span class="o">.</span><span class="n">rauzy_diagram</span><span class="p">(</span><span class="n">extended</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AbelianStratumComponent.rauzy_class_cardinality"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.rauzy_class_cardinality">[docs]</a>    <span class="k">def</span> <span class="nf">rauzy_class_cardinality</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratumComponent.rauzy_class_cardinality">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.rauzy_class_cardinality">[docs]</a>
+    <span class="k">def</span> <span class="nf">rauzy_class_cardinality</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Rauzy diagram cardinality for connected components.</span>
 
 <span class="sd">        Returns the cardinality of the extended Rauzy diagram associated to this</span>
@@ -1562,8 +1874,11 @@
 
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;not known formula for labeled extended Rauzy classes&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AbelianStratumComponent.standard_permutations_number"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.standard_permutations_number">[docs]</a>    <span class="k">def</span> <span class="nf">standard_permutations_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratumComponent.standard_permutations_number">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.standard_permutations_number">[docs]</a>
+    <span class="k">def</span> <span class="nf">standard_permutations_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of standard permutations in the Rauzy class associated</span>
 <span class="sd">        to this connected component.</span>
 
@@ -1604,8 +1919,11 @@
 
         <span class="k">return</span> <span class="n">Integer</span><span class="p">(</span><span class="n">rdc</span><span class="o">.</span><span class="n">number_of_standard_permutations</span><span class="p">(</span><span class="n">profile</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="AbelianStratumComponent.standard_permutations"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.standard_permutations">[docs]</a>    <span class="k">def</span> <span class="nf">standard_permutations</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratumComponent.standard_permutations">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.standard_permutations">[docs]</a>
+    <span class="k">def</span> <span class="nf">standard_permutations</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the set of standard permutations.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -1641,8 +1959,11 @@
         <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">permutation_representative</span><span class="p">(</span><span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">q</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">rauzy_diagram</span><span class="p">(</span><span class="n">symmetric</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">if</span> <span class="n">q</span><span class="o">.</span><span class="n">is_standard</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="AbelianStratumComponent.one_cylinder_diagram"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.one_cylinder_diagram">[docs]</a>    <span class="k">def</span> <span class="nf">one_cylinder_diagram</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratumComponent.one_cylinder_diagram">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.one_cylinder_diagram">[docs]</a>
+    <span class="k">def</span> <span class="nf">one_cylinder_diagram</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a diagram with one cylinder in this connected component.</span>
 
 <span class="sd">        The diagram returned is the one deduced from the method</span>
@@ -1668,8 +1989,11 @@
         <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">permutation_representative</span><span class="p">(</span><span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">to_standard</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">CylinderDiagram</span><span class="p">([(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:],</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">2</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">])],</span><span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AbelianStratumComponent.cylinder_diagram_iterator"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.cylinder_diagram_iterator">[docs]</a>    <span class="k">def</span> <span class="nf">cylinder_diagram_iterator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_computation</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratumComponent.cylinder_diagram_iterator">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.cylinder_diagram_iterator">[docs]</a>
+    <span class="k">def</span> <span class="nf">cylinder_diagram_iterator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_computation</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        An iterator over the cylinder diagrams.</span>
 
 <span class="sd">        INPUT::</span>
@@ -1738,14 +2062,17 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">_cylinder_diagrams_with_symmetric</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span></div>
 
+
     <span class="k">def</span> <span class="nf">_cylinder_diagram_iterator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Default implementation for cylinder diagrams for connected stratum.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stratum</span><span class="p">()</span><span class="o">.</span><span class="n">cylinder_diagram_iterator</span><span class="p">(</span><span class="n">ncyls</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 
-<div class="viewcode-block" id="AbelianStratumComponent.cylinder_diagrams"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.cylinder_diagrams">[docs]</a>    <span class="k">def</span> <span class="nf">cylinder_diagrams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_computation</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="AbelianStratumComponent.cylinder_diagrams">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.cylinder_diagrams">[docs]</a>
+    <span class="k">def</span> <span class="nf">cylinder_diagrams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_computation</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the list of cylinder diagrams associated to this component.</span>
 
 <span class="sd">        INPUT:</span>
@@ -1773,8 +2100,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cylinder_diagram_iterator</span><span class="p">(</span><span class="n">ncyls</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="p">,</span> <span class="n">force_computation</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="AbelianStratumComponent.cylinder_diagrams_number"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.cylinder_diagrams_number">[docs]</a>    <span class="k">def</span> <span class="nf">cylinder_diagrams_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_computation</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratumComponent.cylinder_diagrams_number">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.cylinder_diagrams_number">[docs]</a>
+    <span class="k">def</span> <span class="nf">cylinder_diagrams_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">up_to_symmetry</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_computation</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of cylinder diagrams.</span>
 
 <span class="sd">        INPUT:</span>
@@ -1862,8 +2192,11 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">4</span> <span class="o">//</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="n">cd</span><span class="o">.</span><span class="n">symmetries</span><span class="p">()))</span> <span class="k">for</span> <span class="n">cd</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cylinder_diagram_iterator</span><span class="p">(</span><span class="n">ncyls</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="AbelianStratumComponent.one_origami"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.one_origami">[docs]</a>    <span class="k">def</span> <span class="nf">one_origami</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratumComponent.one_origami">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.one_origami">[docs]</a>
+    <span class="k">def</span> <span class="nf">one_origami</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns an origami in this component</span>
 
 <span class="sd">        The origami returned has the minimal number of squares and one</span>
@@ -1888,8 +2221,11 @@
         <span class="n">v_perm</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
         <span class="k">return</span> <span class="n">Origami_dense_pyx</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">h_perm</span><span class="p">),</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">v_perm</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="AbelianStratumComponent.origami_iterator"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.origami_iterator">[docs]</a>    <span class="k">def</span> <span class="nf">origami_iterator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">primitive</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratumComponent.origami_iterator">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.origami_iterator">[docs]</a>
+    <span class="k">def</span> <span class="nf">origami_iterator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">primitive</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Iterator through the set of origamis with ``n`` squares in this stratum.</span>
 
 <span class="sd">        The output origamis are in normal form. But be careful as there may be</span>
@@ -1943,8 +2279,11 @@
                         <span class="n">oo</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
                         <span class="k">yield</span> <span class="n">oo</span></div>
 
-<div class="viewcode-block" id="AbelianStratumComponent.origamis"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.origamis">[docs]</a>    <span class="k">def</span> <span class="nf">origamis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">primitive</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratumComponent.origamis">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.origamis">[docs]</a>
+    <span class="k">def</span> <span class="nf">origamis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">primitive</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the set of origamis with n squares in this stratum.</span>
 
 <span class="sd">        INPUT:</span>
@@ -1978,8 +2317,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">origami_iterator</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">reduced</span><span class="p">,</span> <span class="n">primitive</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="AbelianStratumComponent.arithmetic_teichmueller_curves"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.arithmetic_teichmueller_curves">[docs]</a>    <span class="k">def</span> <span class="nf">arithmetic_teichmueller_curves</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">primitive</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratumComponent.arithmetic_teichmueller_curves">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.arithmetic_teichmueller_curves">[docs]</a>
+    <span class="k">def</span> <span class="nf">arithmetic_teichmueller_curves</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">primitive</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the arithmetic Teichmueller curves in that component of stratum.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -2027,11 +2369,17 @@
             <span class="k">return</span> <span class="p">[</span><span class="n">tcurve</span> <span class="k">for</span> <span class="n">tcurve</span> <span class="ow">in</span> <span class="n">tcurves</span> <span class="k">if</span> <span class="n">tcurve</span><span class="o">.</span><span class="n">origami</span><span class="p">()</span><span class="o">.</span><span class="n">is_primitive</span><span class="p">()]</span>
         <span class="k">return</span> <span class="n">tcurves</span></div>
 
-<div class="viewcode-block" id="AbelianStratumComponent.lyapunov_exponents"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.lyapunov_exponents">[docs]</a>    <span class="k">def</span> <span class="nf">lyapunov_exponents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="AbelianStratumComponent.lyapunov_exponents">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.lyapunov_exponents">[docs]</a>
+    <span class="k">def</span> <span class="nf">lyapunov_exponents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
         <span class="k">return</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">permutation_representative</span><span class="p">(</span><span class="n">reduced</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">lyapunov_exponents_H_plus</span><span class="p">(</span><span class="o">**</span><span class="n">kargs</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="AbelianStratumComponent.single_cylinder_representative"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.single_cylinder_representative">[docs]</a>    <span class="k">def</span> <span class="nf">single_cylinder_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratumComponent.single_cylinder_representative">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.single_cylinder_representative">[docs]</a>
+    <span class="k">def</span> <span class="nf">single_cylinder_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a single cylinder permutation representative.</span>
 
 <span class="sd">        Returns a cylindric permutation representative of this connected</span>
@@ -2110,8 +2458,11 @@
 
         <span class="k">return</span> <span class="n">perm</span></div>
 
-<div class="viewcode-block" id="AbelianStratumComponent.single_cylinder_origami"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.single_cylinder_origami">[docs]</a>    <span class="k">def</span> <span class="nf">single_cylinder_origami</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStratumComponent.single_cylinder_origami">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStratumComponent.single_cylinder_origami">[docs]</a>
+    <span class="k">def</span> <span class="nf">single_cylinder_origami</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns an origami associated to a single cylinder permutation representative.</span>
 
 <span class="sd">        Returns an origami in this connected (or non-hyperelliptic) component</span>
@@ -2146,18 +2497,24 @@
 <span class="sd">            sage: O.stratum_component() == cc</span>
 <span class="sd">            True</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">single_cylinder_representative</span><span class="p">(</span><span class="n">reduced</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_origami</span><span class="p">()</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">single_cylinder_representative</span><span class="p">(</span><span class="n">reduced</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_origami</span><span class="p">()</span></div>
+</div>
+
 
 <span class="n">ASC</span> <span class="o">=</span> <span class="n">AbelianStratumComponent</span>
 
-<div class="viewcode-block" id="HypAbelianStratumComponent"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.HypAbelianStratumComponent">[docs]</a><span class="k">class</span> <span class="nc">HypAbelianStratumComponent</span><span class="p">(</span><span class="n">ASC</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="HypAbelianStratumComponent">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.HypAbelianStratumComponent">[docs]</a>
+<span class="k">class</span> <span class="nc">HypAbelianStratumComponent</span><span class="p">(</span><span class="n">ASC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Hyperelliptic component of Abelian stratum.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;hyp&#39;</span>
 
-<div class="viewcode-block" id="HypAbelianStratumComponent.spin"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.HypAbelianStratumComponent.spin">[docs]</a>    <span class="k">def</span> <span class="nf">spin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="HypAbelianStratumComponent.spin">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.HypAbelianStratumComponent.spin">[docs]</a>
+    <span class="k">def</span> <span class="nf">spin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the spin parity of hyperelliptic stratum.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -2213,8 +2570,11 @@
                 <span class="k">return</span> <span class="kc">None</span>
             <span class="k">return</span> <span class="n">Integer</span><span class="p">(((</span><span class="bp">self</span><span class="o">.</span><span class="n">stratum</span><span class="p">()</span><span class="o">.</span><span class="n">genus</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span> <span class="o">%</span><span class="mi">2</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="HypAbelianStratumComponent.permutation_representative"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.HypAbelianStratumComponent.permutation_representative">[docs]</a>    <span class="k">def</span> <span class="nf">permutation_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">relabel</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="HypAbelianStratumComponent.permutation_representative">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.HypAbelianStratumComponent.permutation_representative">[docs]</a>
+    <span class="k">def</span> <span class="nf">permutation_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">relabel</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the Zorich representative of this connected component.</span>
 
 <span class="sd">        Zorich constructs explicitly interval exchange</span>
@@ -2327,8 +2687,11 @@
             <span class="n">p</span><span class="o">.</span><span class="n">alphabet</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)))</span>
         <span class="k">return</span> <span class="n">p</span></div>
 
-<div class="viewcode-block" id="HypAbelianStratumComponent.rauzy_class_cardinality"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.HypAbelianStratumComponent.rauzy_class_cardinality">[docs]</a>    <span class="k">def</span> <span class="nf">rauzy_class_cardinality</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="HypAbelianStratumComponent.rauzy_class_cardinality">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.HypAbelianStratumComponent.rauzy_class_cardinality">[docs]</a>
+    <span class="k">def</span> <span class="nf">rauzy_class_cardinality</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the cardinality of the extended Rauzy diagram associated to the</span>
 <span class="sd">        hyperelliptic component</span>
 
@@ -2460,8 +2823,11 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">binomial</span><span class="p">(</span><span class="n">dd</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">d</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="HypAbelianStratumComponent.random_standard_permutation"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.HypAbelianStratumComponent.random_standard_permutation">[docs]</a>    <span class="k">def</span> <span class="nf">random_standard_permutation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nsteps</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="HypAbelianStratumComponent.random_standard_permutation">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.HypAbelianStratumComponent.random_standard_permutation">[docs]</a>
+    <span class="k">def</span> <span class="nf">random_standard_permutation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nsteps</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        In hyperelliptic component there is only one standard permutation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">stratum</span><span class="p">()</span><span class="o">.</span><span class="n">nb_fake_zeros</span><span class="p">():</span>
@@ -2469,8 +2835,11 @@
 
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;not implemented when there are fake zeros&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="HypAbelianStratumComponent.standard_permutations"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.HypAbelianStratumComponent.standard_permutations">[docs]</a>    <span class="k">def</span> <span class="nf">standard_permutations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="HypAbelianStratumComponent.standard_permutations">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.HypAbelianStratumComponent.standard_permutations">[docs]</a>
+    <span class="k">def</span> <span class="nf">standard_permutations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the standard permutations in this hyperelliptic component.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -2497,8 +2866,11 @@
 
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;not implemented when there are fake zeros&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="HypAbelianStratumComponent.standard_permutations_number"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.HypAbelianStratumComponent.standard_permutations_number">[docs]</a>    <span class="k">def</span> <span class="nf">standard_permutations_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="HypAbelianStratumComponent.standard_permutations_number">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.HypAbelianStratumComponent.standard_permutations_number">[docs]</a>
+    <span class="k">def</span> <span class="nf">standard_permutations_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of standard permutations in this hyperelliptic</span>
 <span class="sd">        component.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -2507,8 +2879,9 @@
 
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;not implemented when there are fake zeros&quot;</span><span class="p">)</span></div>
 
+
     <span class="k">def</span> <span class="nf">_cylinder_diagram_iterator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the list of cylinder diagrams associated to this hyperelliptic</span>
 <span class="sd">        component.</span>
 
@@ -2552,8 +2925,10 @@
 
         <span class="k">return</span> <span class="n">hyperelliptic_cylinder_diagram_iterator</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">+</span><span class="nb">sum</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
 
-<div class="viewcode-block" id="HypAbelianStratumComponent.single_cylinder_representative"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.HypAbelianStratumComponent.single_cylinder_representative">[docs]</a>    <span class="k">def</span> <span class="nf">single_cylinder_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="HypAbelianStratumComponent.single_cylinder_representative">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.HypAbelianStratumComponent.single_cylinder_representative">[docs]</a>
+    <span class="k">def</span> <span class="nf">single_cylinder_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a single cylinder permutation representative.</span>
 
 <span class="sd">        Returns a permutation representative of a square-tiled surface in this</span>
@@ -2638,19 +3013,25 @@
             <span class="n">perm</span> <span class="o">=</span> <span class="n">GeneralizedPermutation</span><span class="p">(</span><span class="n">top_row</span><span class="p">,</span> <span class="n">bot_row</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="n">reduced</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">alphabet</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">perm</span><span class="o">.</span><span class="n">alphabet</span><span class="p">(</span><span class="n">alphabet</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">perm</span></div></div>
+            <span class="k">return</span> <span class="n">perm</span></div>
+</div>
+
 
 
 <span class="n">HypASC</span> <span class="o">=</span> <span class="n">HypAbelianStratumComponent</span>
 
-<div class="viewcode-block" id="NonHypAbelianStratumComponent"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.NonHypAbelianStratumComponent">[docs]</a><span class="k">class</span> <span class="nc">NonHypAbelianStratumComponent</span><span class="p">(</span><span class="n">ASC</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="NonHypAbelianStratumComponent">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.NonHypAbelianStratumComponent">[docs]</a>
+<span class="k">class</span> <span class="nc">NonHypAbelianStratumComponent</span><span class="p">(</span><span class="n">ASC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Non hyperelliptic component of Abelian stratum.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;nonhyp&#39;</span>
 
-<div class="viewcode-block" id="NonHypAbelianStratumComponent.rauzy_class_cardinality"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.NonHypAbelianStratumComponent.rauzy_class_cardinality">[docs]</a>    <span class="k">def</span> <span class="nf">rauzy_class_cardinality</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="NonHypAbelianStratumComponent.rauzy_class_cardinality">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.NonHypAbelianStratumComponent.rauzy_class_cardinality">[docs]</a>
+    <span class="k">def</span> <span class="nf">rauzy_class_cardinality</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the cardinality of Rauzy diagram associated to this non</span>
 <span class="sd">        hyperelliptic component.</span>
 
@@ -2709,7 +3090,6 @@
         <span class="n">profile</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">stratum</span><span class="p">()</span><span class="o">.</span><span class="n">zeros</span><span class="p">()))</span>
         <span class="n">hyp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stratum</span><span class="p">()</span><span class="o">.</span><span class="n">hyperelliptic_component</span><span class="p">()</span>
 
-
         <span class="k">if</span> <span class="n">left_degree</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">left_degree</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="n">Integer</span><span class="p">)),</span> <span class="s2">&quot;if not None, left_degree should be an integer&quot;</span>
             <span class="n">left_degree</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">left_degree</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
@@ -2731,11 +3111,13 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;no formula known for cardinality of  extended labeled Rauzy classes&quot;</span><span class="p">)</span>
 
-
         <span class="k">return</span> <span class="n">n</span> <span class="o">-</span> <span class="n">n_hyp</span></div>
 
-<div class="viewcode-block" id="NonHypAbelianStratumComponent.standard_permutations_number"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.NonHypAbelianStratumComponent.standard_permutations_number">[docs]</a>    <span class="k">def</span> <span class="nf">standard_permutations_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="NonHypAbelianStratumComponent.standard_permutations_number">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.NonHypAbelianStratumComponent.standard_permutations_number">[docs]</a>
+    <span class="k">def</span> <span class="nf">standard_permutations_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        EXAMPLES::</span>
 
 <span class="sd">            sage: from surface_dynamics import *</span>
@@ -2759,8 +3141,9 @@
         <span class="n">profile</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stratum</span><span class="p">()</span><span class="o">.</span><span class="n">zeros</span><span class="p">()))</span>
         <span class="k">return</span> <span class="n">rdc</span><span class="o">.</span><span class="n">number_of_standard_permutations</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">stratum</span><span class="p">()</span><span class="o">.</span><span class="n">hyperelliptic_component</span><span class="p">()</span><span class="o">.</span><span class="n">standard_permutations_number</span><span class="p">()</span></div>
 
+
     <span class="k">def</span> <span class="nf">_cylinder_diagram_iterator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the list of cylinder diagrams (or completely periodic</span>
 <span class="sd">        configurations) associated to this non-hyperelliptic component.</span>
 
@@ -2790,10 +3173,13 @@
         <span class="k">return</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="ow">not</span> <span class="n">c</span><span class="o">.</span><span class="n">is_hyperelliptic</span><span class="p">(),</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">stratum</span><span class="p">()</span><span class="o">.</span><span class="n">cylinder_diagram_iterator</span><span class="p">(</span><span class="n">ncyls</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span></div>
 
+
 <span class="n">NonHypASC</span> <span class="o">=</span> <span class="n">NonHypAbelianStratumComponent</span>
 
-<div class="viewcode-block" id="EvenAbelianStratumComponent"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.EvenAbelianStratumComponent">[docs]</a><span class="k">class</span> <span class="nc">EvenAbelianStratumComponent</span><span class="p">(</span><span class="n">ASC</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="EvenAbelianStratumComponent">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.EvenAbelianStratumComponent">[docs]</a>
+<span class="k">class</span> <span class="nc">EvenAbelianStratumComponent</span><span class="p">(</span><span class="n">ASC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Connected component of Abelian stratum with even spin structure.</span>
 
 <span class="sd">    .. warning::</span>
@@ -2802,8 +3188,10 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;even&#39;</span>
 
-<div class="viewcode-block" id="EvenAbelianStratumComponent.spin"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.EvenAbelianStratumComponent.spin">[docs]</a>    <span class="k">def</span> <span class="nf">spin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="EvenAbelianStratumComponent.spin">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.EvenAbelianStratumComponent.spin">[docs]</a>
+    <span class="k">def</span> <span class="nf">spin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return ``0``.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -2817,8 +3205,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="EvenAbelianStratumComponent.permutation_representative"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.EvenAbelianStratumComponent.permutation_representative">[docs]</a>    <span class="k">def</span> <span class="nf">permutation_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">relabel</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="EvenAbelianStratumComponent.permutation_representative">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.EvenAbelianStratumComponent.permutation_representative">[docs]</a>
+    <span class="k">def</span> <span class="nf">permutation_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">relabel</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the Zorich representative of this connected component.</span>
 
 <span class="sd">        Zorich constructs explicitly interval exchange</span>
@@ -2953,8 +3344,11 @@
             <span class="n">p</span><span class="o">.</span><span class="n">alphabet</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)))</span>
         <span class="k">return</span> <span class="n">p</span></div>
 
-<div class="viewcode-block" id="EvenAbelianStratumComponent.rauzy_class_cardinality"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.EvenAbelianStratumComponent.rauzy_class_cardinality">[docs]</a>    <span class="k">def</span> <span class="nf">rauzy_class_cardinality</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="EvenAbelianStratumComponent.rauzy_class_cardinality">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.EvenAbelianStratumComponent.rauzy_class_cardinality">[docs]</a>
+    <span class="k">def</span> <span class="nf">rauzy_class_cardinality</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Cardinality of rauzy diagram for even component of a stratum</span>
 
 <span class="sd">        INPUT:</span>
@@ -3034,8 +3428,11 @@
 
         <span class="k">return</span> <span class="n">N</span></div>
 
-<div class="viewcode-block" id="EvenAbelianStratumComponent.standard_permutations_number"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.EvenAbelianStratumComponent.standard_permutations_number">[docs]</a>    <span class="k">def</span> <span class="nf">standard_permutations_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="EvenAbelianStratumComponent.standard_permutations_number">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.EvenAbelianStratumComponent.standard_permutations_number">[docs]</a>
+    <span class="k">def</span> <span class="nf">standard_permutations_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of standard permutation of this even component.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -3080,8 +3477,9 @@
 
         <span class="k">return</span> <span class="n">N</span></div>
 
+
     <span class="k">def</span> <span class="nf">_cylinder_diagram_iterator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Iterator over cylinder diagram.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -3105,8 +3503,10 @@
         <span class="k">return</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">spin_parity</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">stratum</span><span class="p">()</span><span class="o">.</span><span class="n">cylinder_diagram_iterator</span><span class="p">(</span><span class="n">ncyls</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">))</span>
 
-<div class="viewcode-block" id="EvenAbelianStratumComponent.single_cylinder_representative"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.EvenAbelianStratumComponent.single_cylinder_representative">[docs]</a>    <span class="k">def</span> <span class="nf">single_cylinder_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="EvenAbelianStratumComponent.single_cylinder_representative">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.EvenAbelianStratumComponent.single_cylinder_representative">[docs]</a>
+    <span class="k">def</span> <span class="nf">single_cylinder_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a single cylinder permutation representative.</span>
 
 <span class="sd">        Returns a permutation representative of a square-tiled surface in this</span>
@@ -3169,17 +3569,25 @@
 
         <span class="k">if</span> <span class="n">alphabet</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">perm</span><span class="o">.</span><span class="n">alphabet</span><span class="p">(</span><span class="n">alphabet</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">perm</span><span class="o">.</span><span class="n">reduced</span><span class="p">()</span> <span class="k">if</span> <span class="n">reduced</span> <span class="k">else</span> <span class="n">perm</span></div></div>
+        <span class="k">return</span> <span class="n">perm</span><span class="o">.</span><span class="n">reduced</span><span class="p">()</span> <span class="k">if</span> <span class="n">reduced</span> <span class="k">else</span> <span class="n">perm</span></div>
+</div>
+
 
 <span class="n">EvenASC</span> <span class="o">=</span> <span class="n">EvenAbelianStratumComponent</span>
 
-<div class="viewcode-block" id="OddAbelianStratumComponent"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.OddAbelianStratumComponent">[docs]</a><span class="k">class</span> <span class="nc">OddAbelianStratumComponent</span><span class="p">(</span><span class="n">ASC</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="OddAbelianStratumComponent">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.OddAbelianStratumComponent">[docs]</a>
+<span class="k">class</span> <span class="nc">OddAbelianStratumComponent</span><span class="p">(</span><span class="n">ASC</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Connected component of an Abelian stratum with odd spin parity.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;odd&#39;</span>
-<div class="viewcode-block" id="OddAbelianStratumComponent.spin"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.OddAbelianStratumComponent.spin">[docs]</a>    <span class="k">def</span> <span class="nf">spin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="OddAbelianStratumComponent.spin">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.OddAbelianStratumComponent.spin">[docs]</a>
+    <span class="k">def</span> <span class="nf">spin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns 1 which is, by definition, the spin parity of this stratum component.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -3190,11 +3598,14 @@
 <span class="sd">            H_3(4)^odd</span>
 <span class="sd">            sage: c.spin()</span>
 <span class="sd">            1</span>
-<span class="sd">         &quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="mi">1</span></div>
 
-<div class="viewcode-block" id="OddAbelianStratumComponent.permutation_representative"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.OddAbelianStratumComponent.permutation_representative">[docs]</a>    <span class="k">def</span> <span class="nf">permutation_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">relabel</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="OddAbelianStratumComponent.permutation_representative">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.OddAbelianStratumComponent.permutation_representative">[docs]</a>
+    <span class="k">def</span> <span class="nf">permutation_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">relabel</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the Zorich representative of this connected component.</span>
 
 <span class="sd">        A. Zorich constructs explicitly interval exchange</span>
@@ -3313,8 +3724,11 @@
             <span class="n">p</span><span class="o">.</span><span class="n">alphabet</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)))</span>
         <span class="k">return</span> <span class="n">p</span></div>
 
-<div class="viewcode-block" id="OddAbelianStratumComponent.rauzy_class_cardinality"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.OddAbelianStratumComponent.rauzy_class_cardinality">[docs]</a>    <span class="k">def</span> <span class="nf">rauzy_class_cardinality</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="OddAbelianStratumComponent.rauzy_class_cardinality">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.OddAbelianStratumComponent.rauzy_class_cardinality">[docs]</a>
+    <span class="k">def</span> <span class="nf">rauzy_class_cardinality</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_degree</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Cardinality of rauzy diagram for odd component</span>
 
 <span class="sd">        INPUT:</span>
@@ -3405,8 +3819,11 @@
 
         <span class="k">return</span> <span class="n">N</span></div>
 
-<div class="viewcode-block" id="OddAbelianStratumComponent.standard_permutations_number"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.OddAbelianStratumComponent.standard_permutations_number">[docs]</a>    <span class="k">def</span> <span class="nf">standard_permutations_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="OddAbelianStratumComponent.standard_permutations_number">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.OddAbelianStratumComponent.standard_permutations_number">[docs]</a>
+    <span class="k">def</span> <span class="nf">standard_permutations_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of standard permutation of this even component.</span>
 
 
@@ -3466,8 +3883,9 @@
 
         <span class="k">return</span> <span class="n">N</span></div>
 
+
     <span class="k">def</span> <span class="nf">_cylinder_diagram_iterator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ncyls</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the list of cylinder diagrams associated to this odd connected</span>
 <span class="sd">        component.</span>
 
@@ -3498,8 +3916,10 @@
         <span class="k">return</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">spin_parity</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">stratum</span><span class="p">()</span><span class="o">.</span><span class="n">cylinder_diagram_iterator</span><span class="p">(</span><span class="n">ncyls</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">))</span>
 
-<div class="viewcode-block" id="OddAbelianStratumComponent.single_cylinder_representative"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.OddAbelianStratumComponent.single_cylinder_representative">[docs]</a>    <span class="k">def</span> <span class="nf">single_cylinder_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="OddAbelianStratumComponent.single_cylinder_representative">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.OddAbelianStratumComponent.single_cylinder_representative">[docs]</a>
+    <span class="k">def</span> <span class="nf">single_cylinder_representative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a single cylinder permutation representative.</span>
 
 <span class="sd">        Returns a permutation representative of a square-tiled surface in this</span>
@@ -3550,16 +3970,18 @@
         <span class="n">two_count</span> <span class="o">=</span> <span class="n">real_zeros</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">two_count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">perm</span> <span class="o">=</span> <span class="n">cylinder_concatenation</span><span class="p">(</span><span class="n">fk_zeros_perm</span><span class="p">,</span><span class="n">no_two_odd</span><span class="p">(</span><span class="n">real_zeros</span><span class="p">))</span>
-        <span class="k">elif</span> <span class="n">two_count</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">:</span>
+        <span class="k">elif</span> <span class="n">two_count</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="n">perm</span> <span class="o">=</span> <span class="n">cylinder_concatenation</span><span class="p">(</span><span class="n">fk_zeros_perm</span><span class="p">,</span><span class="n">one_two_odd</span><span class="p">(</span><span class="n">real_zeros</span><span class="p">))</span>
-        <span class="k">elif</span> <span class="n">two_count</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">two_count</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">two_count</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">two_count</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">perm</span> <span class="o">=</span> <span class="n">cylinder_concatenation</span><span class="p">(</span><span class="n">fk_zeros_perm</span><span class="p">,</span><span class="n">even_twos_odd</span><span class="p">(</span><span class="n">real_zeros</span><span class="p">,</span><span class="n">two_count</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">perm</span> <span class="o">=</span> <span class="n">cylinder_concatenation</span><span class="p">(</span><span class="n">fk_zeros_perm</span><span class="p">,</span><span class="n">odd_twos_odd</span><span class="p">(</span><span class="n">real_zeros</span><span class="p">,</span><span class="n">two_count</span><span class="p">))</span>
 
         <span class="k">if</span> <span class="n">alphabet</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">perm</span><span class="o">.</span><span class="n">alphabet</span><span class="p">(</span><span class="n">alphabet</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">perm</span><span class="o">.</span><span class="n">reduced</span><span class="p">()</span> <span class="k">if</span> <span class="n">reduced</span> <span class="k">else</span> <span class="n">perm</span></div></div>
+        <span class="k">return</span> <span class="n">perm</span><span class="o">.</span><span class="n">reduced</span><span class="p">()</span> <span class="k">if</span> <span class="n">reduced</span> <span class="k">else</span> <span class="n">perm</span></div>
+</div>
+
 
 <span class="n">OddASC</span> <span class="o">=</span> <span class="n">OddAbelianStratumComponent</span>
 
@@ -3568,8 +3990,10 @@
 <span class="c1"># iterators for Abelian strata with constraints on genus and dimension</span>
 <span class="c1">#</span>
 
-<div class="viewcode-block" id="AbelianStrata"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata">[docs]</a><span class="k">class</span> <span class="nc">AbelianStrata</span><span class="p">(</span><span class="n">Strata</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="AbelianStrata">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata">[docs]</a>
+<span class="k">class</span> <span class="nc">AbelianStrata</span><span class="p">(</span><span class="n">Strata</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Abelian strata.</span>
 
 <span class="sd">    INPUT:</span>
@@ -3666,7 +4090,7 @@
         <span class="k">return</span> <span class="n">S</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">genus</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dimension</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fake_zeros</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        TESTS::</span>
 
 <span class="sd">            sage: from surface_dynamics import *</span>
@@ -3686,7 +4110,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_fake_zeros</span> <span class="o">=</span> <span class="n">fake_zeros</span>
 
     <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Equality test.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">AbelianStrata</span><span class="p">)</span> <span class="ow">and</span>
@@ -3695,13 +4119,13 @@
                 <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fake_zeros</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">_fake_zeros</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Difference test.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_repr_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        TESTS::</span>
 
 <span class="sd">            sage: from surface_dynamics import *</span>
@@ -3732,13 +4156,13 @@
             <span class="k">return</span> <span class="s2">&quot;Abelian strata&quot;</span>
 
     <span class="k">def</span> <span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Pickling support.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">AbelianStrata</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_genus</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dimension</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fake_zeros</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Containance test</span>
 
 <span class="sd">        TESTS::</span>
@@ -3773,8 +4197,11 @@
                 <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fake_zeros</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fake_zeros</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">c</span><span class="o">.</span><span class="n">nb_fake_zeros</span><span class="p">()))</span></div>
 
 
-<div class="viewcode-block" id="AbelianStrata_g"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_g">[docs]</a><span class="k">class</span> <span class="nc">AbelianStrata_g</span><span class="p">(</span><span class="n">AbelianStrata</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStrata_g">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_g">[docs]</a>
+<span class="k">class</span> <span class="nc">AbelianStrata_g</span><span class="p">(</span><span class="n">AbelianStrata</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Stratas of genus g surfaces without fake zeros.</span>
 
 <span class="sd">    INPUT:</span>
@@ -3792,8 +4219,10 @@
 <span class="sd">        sage: AbelianStrata(genus=4).random_element() #random</span>
 <span class="sd">        H_4(4, 2)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="AbelianStrata_g.cardinality"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_g.cardinality">[docs]</a>    <span class="k">def</span> <span class="nf">cardinality</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="AbelianStrata_g.cardinality">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_g.cardinality">[docs]</a>
+    <span class="k">def</span> <span class="nf">cardinality</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of abelian strata with a given genus.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -3815,8 +4244,9 @@
             <span class="k">return</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">Partitions</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_genus</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">cardinality</span><span class="p">()</span></div>
 
+
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        TESTS::</span>
 
 <span class="sd">            sage: from surface_dynamics import *</span>
@@ -3832,8 +4262,10 @@
             <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Partitions</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_genus</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
                 <span class="k">yield</span> <span class="n">AbelianStratum</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">_list</span><span class="p">)</span>
 
-<div class="viewcode-block" id="AbelianStrata_g.random_element"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_g.random_element">[docs]</a>    <span class="k">def</span> <span class="nf">random_element</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="AbelianStrata_g.random_element">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_g.random_element">[docs]</a>
+    <span class="k">def</span> <span class="nf">random_element</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a random stratum.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_genus</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -3842,8 +4274,11 @@
             <span class="k">return</span> <span class="n">AbelianStratum</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
         <span class="k">return</span> <span class="n">AbelianStratum</span><span class="p">(</span><span class="n">Partitions</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_genus</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">random_element</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="AbelianStrata_g.first"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_g.first">[docs]</a>    <span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStrata_g.first">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_g.first">[docs]</a>
+    <span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the first element of this list of strata.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -3857,10 +4292,13 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">AbelianStratum</span><span class="p">([</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_genus</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span></div>
 
+
     <span class="n">an_element_</span> <span class="o">=</span> <span class="n">first</span>
 
-<div class="viewcode-block" id="AbelianStrata_g.last"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_g.last">[docs]</a>    <span class="k">def</span> <span class="nf">last</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="AbelianStrata_g.last">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_g.last">[docs]</a>
+    <span class="k">def</span> <span class="nf">last</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the last element of this list of strata.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -3872,11 +4310,15 @@
 <span class="sd">            sage: AbelianStrata(genus=5).last()</span>
 <span class="sd">            H_5(1^8)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">AbelianStratum</span><span class="p">({</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_genus</span><span class="o">-</span><span class="mi">2</span><span class="p">})</span></div></div>
+        <span class="k">return</span> <span class="n">AbelianStratum</span><span class="p">({</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_genus</span><span class="o">-</span><span class="mi">2</span><span class="p">})</span></div>
+</div>
 
 
-<div class="viewcode-block" id="AbelianStrata_d"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_d">[docs]</a><span class="k">class</span> <span class="nc">AbelianStrata_d</span><span class="p">(</span><span class="n">AbelianStrata</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStrata_d">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_d">[docs]</a>
+<span class="k">class</span> <span class="nc">AbelianStrata_d</span><span class="p">(</span><span class="n">AbelianStrata</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Strata with prescribed dimension.</span>
 
 <span class="sd">    INPUT:</span>
@@ -3902,8 +4344,10 @@
 <span class="sd">        0 1 2 3 4</span>
 <span class="sd">        4 0 1 2 3</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="AbelianStrata_d.first"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_d.first">[docs]</a>    <span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="AbelianStrata_d.first">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_d.first">[docs]</a>
+    <span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the first stratum.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -3922,10 +4366,13 @@
             <span class="k">return</span> <span class="n">AbelianStratum</span><span class="p">([(</span><span class="n">n</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">,(</span><span class="n">n</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">])</span>
         <span class="k">return</span> <span class="n">AbelianStratum</span><span class="p">([</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span></div>
 
+
     <span class="n">an_element</span> <span class="o">=</span> <span class="n">first</span>
 
-<div class="viewcode-block" id="AbelianStrata_d.last"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_d.last">[docs]</a>    <span class="k">def</span> <span class="nf">last</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="AbelianStrata_d.last">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_d.last">[docs]</a>
+    <span class="k">def</span> <span class="nf">last</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the last stratum.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -3956,8 +4403,9 @@
                 <span class="n">nn</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">%</span><span class="mi">4</span>
                 <span class="k">return</span> <span class="n">AbelianStratum</span><span class="p">({</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="o">-</span><span class="n">nn</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="p">((</span><span class="n">n</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span><span class="o">//</span><span class="mi">4</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">nn</span><span class="p">})</span></div>
 
+
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Iterator.</span>
 
 <span class="sd">        TESTS::</span>
@@ -3983,8 +4431,10 @@
                     <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Partitions</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">length</span><span class="o">=</span><span class="n">s</span><span class="p">,</span><span class="n">min_part</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
                         <span class="k">yield</span> <span class="n">AbelianStratum</span><span class="p">([</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">p</span><span class="p">])</span>
 
-<div class="viewcode-block" id="AbelianStrata_d.cardinality"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_d.cardinality">[docs]</a>    <span class="k">def</span> <span class="nf">cardinality</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="AbelianStrata_d.cardinality">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_d.cardinality">[docs]</a>
+    <span class="k">def</span> <span class="nf">cardinality</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of Abelian strata with given dimension.</span>
 
 <span class="sd">        EXAMPLES::</span>
@@ -4027,10 +4477,14 @@
             <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Partitions</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">length</span><span class="o">=</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">cardinality</span><span class="p">()</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">n</span><span class="o">%</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Partitions</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">length</span><span class="o">=</span><span class="n">s</span><span class="p">,</span><span class="n">min_part</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">cardinality</span><span class="p">()</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">n</span><span class="o">%</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span></div></div>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Partitions</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">length</span><span class="o">=</span><span class="n">s</span><span class="p">,</span><span class="n">min_part</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">cardinality</span><span class="p">()</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">n</span><span class="o">%</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span></div>
+</div>
 
-<div class="viewcode-block" id="AbelianStrata_gd"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_gd">[docs]</a><span class="k">class</span> <span class="nc">AbelianStrata_gd</span><span class="p">(</span><span class="n">AbelianStrata</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStrata_gd">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_gd">[docs]</a>
+<span class="k">class</span> <span class="nc">AbelianStrata_gd</span><span class="p">(</span><span class="n">AbelianStrata</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Abelian strata of prescribed genus and number of intervals.</span>
 
 <span class="sd">    INPUT:</span>
@@ -4042,7 +4496,7 @@
 <span class="sd">    - ``fake_zeros`` - boolean: whether or not consider fake zeros</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        TESTS::</span>
 
 <span class="sd">            sage: from surface_dynamics import *</span>
@@ -4072,8 +4526,11 @@
                 <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Partitions</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_genus</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">s</span><span class="p">):</span>
                     <span class="k">yield</span> <span class="n">AbelianStratum</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AbelianStrata_all"><a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_all">[docs]</a><span class="k">class</span> <span class="nc">AbelianStrata_all</span><span class="p">(</span><span class="n">AbelianStrata</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbelianStrata_all">
+<a class="viewcode-back" href="../../../strata.html#surface_dynamics.flat_surfaces.abelian_strata.AbelianStrata_all">[docs]</a>
+<span class="k">class</span> <span class="nc">AbelianStrata_all</span><span class="p">(</span><span class="n">AbelianStrata</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Abelian strata.</span>
 
 <span class="sd">    INPUT:</span>
@@ -4115,7 +4572,7 @@
 <span class="sd">        H_2(1^2, 0)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        TESTS::</span>
 
 <span class="sd">            sage: from surface_dynamics import *</span>
@@ -4125,36 +4582,43 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">count</span>
         <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">count</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
-            <span class="k">for</span> <span class="n">stratum</span> <span class="ow">in</span> <span class="n">AbelianStrata</span><span class="p">(</span><span class="n">dimension</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">fake_zeros</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_fake_zeros</span><span class="p">):</span>
-                <span class="k">yield</span> <span class="n">stratum</span></div>
+            <span class="k">yield from</span> <span class="n">AbelianStrata</span><span class="p">(</span><span class="n">dimension</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">fake_zeros</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_fake_zeros</span><span class="p">)</span></div>
 
 </pre></div>
-
-           </div>
-          </div>
-          <footer>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2021, the surface-dynamics authors.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+        </article>
       </div>
-    </section>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2021-2023, the surface-dynamics authors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
   </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
-</body>
+</div><script src="../../../_static/documentation_options.js?v=1dd76d02"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/scripts/furo.js?v=4e2eecee"></script>
+    </body>
 </html>
